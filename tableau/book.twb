@@ -1,0 +1,1178 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.20.0313.1709                               -->
+<workbook source-build='2019.2.10 (20192.20.0313.1709)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='book_15874671877920' path='/workbooks' revision='1.3' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ro_rt_latest+' inline='true' name='federated.08q9rk604ps3g312563o61xyqrqi' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ro_rt_latest' name='textscan.00jxavt19cgp9x1bqzy0u0p57fai'>
+            <connection class='textscan' directory='/Users/andrei/PycharmProjects/covid-19-rt-romania/data' filename='ro_rt_latest.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[ro_rt_latest.csv].[state]' />
+                <expression op='[ro_data_latest.csv].[state]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ro_rt_latest.csv].[date]' />
+                <expression op='[ro_data_latest.csv].[date]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='textscan.00jxavt19cgp9x1bqzy0u0p57fai' name='ro_rt_latest.csv' table='[ro_rt_latest#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='state' ordinal='0' />
+              <column datatype='date' name='date' ordinal='1' />
+              <column datatype='real' name='ML' ordinal='2' />
+              <column datatype='real' name='Low_90' ordinal='3' />
+              <column datatype='real' name='High_90' ordinal='4' />
+              <column datatype='real' name='Low_50' ordinal='5' />
+              <column datatype='real' name='High_50' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='textscan.00jxavt19cgp9x1bqzy0u0p57fai' name='ro_data_latest.csv' table='[ro_data_latest#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='date' name='date' ordinal='1' />
+              <column datatype='string' name='state' ordinal='2' />
+              <column datatype='integer' name='positive' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[F1]' value='[ro_data_latest.csv].[F1]' />
+          <map key='[High_50]' value='[ro_rt_latest.csv].[High_50]' />
+          <map key='[High_90]' value='[ro_rt_latest.csv].[High_90]' />
+          <map key='[Low_50]' value='[ro_rt_latest.csv].[Low_50]' />
+          <map key='[Low_90]' value='[ro_rt_latest.csv].[Low_90]' />
+          <map key='[ML]' value='[ro_rt_latest.csv].[ML]' />
+          <map key='[date (ro_data_latest.csv)]' value='[ro_data_latest.csv].[date]' />
+          <map key='[date]' value='[ro_rt_latest.csv].[date]' />
+          <map key='[positive]' value='[ro_data_latest.csv].[positive]' />
+          <map key='[state (ro_data_latest.csv)]' value='[ro_data_latest.csv].[state]' />
+          <map key='[state]' value='[ro_rt_latest.csv].[state]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ML</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ML]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>ML</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low_90</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Low_90]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>Low_90</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High_90</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High_90]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>High_90</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low_50</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Low_50]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>Low_50</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High_50</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High_50]</local-name>
+            <parent-name>[ro_rt_latest.csv]</parent-name>
+            <remote-alias>High_50</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ro_data_latest.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[ro_data_latest.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date (ro_data_latest.csv)]</local-name>
+            <parent-name>[ro_data_latest.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state (ro_data_latest.csv)]</local-name>
+            <parent-name>[ro_data_latest.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>positive</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[positive]</local-name>
+            <parent-name>[ro_data_latest.csv]</parent-name>
+            <remote-alias>positive</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative' />
+      <column caption='High 50' datatype='real' name='[High_50]' role='measure' type='quantitative' />
+      <column caption='High 90' datatype='real' name='[High_90]' role='measure' type='quantitative' />
+      <column caption='Low 50' datatype='real' name='[Low_50]' role='measure' type='quantitative' />
+      <column caption='Low 90' datatype='real' name='[Low_90]' role='measure' type='quantitative' />
+      <column datatype='real' name='[ML]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Date (Ro Data Latest.Csv)' datatype='date' hidden='true' name='[date (ro_data_latest.csv)]' role='dimension' type='ordinal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Positive' datatype='integer' name='[positive]' role='measure' type='quantitative' />
+      <column caption='State (Ro Data Latest.Csv)' datatype='string' hidden='true' name='[state (ro_data_latest.csv)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+        <aliases>
+          <alias key='&quot;AB&quot;' value='Alba' />
+          <alias key='&quot;AG&quot;' value='Argeș' />
+          <alias key='&quot;AR&quot;' value='Arad' />
+          <alias key='&quot;B&quot;' value='București' />
+          <alias key='&quot;BC&quot;' value='Bacău' />
+          <alias key='&quot;BH&quot;' value='Bihor' />
+          <alias key='&quot;BN&quot;' value='Bistrița-Năsăud' />
+          <alias key='&quot;BT&quot;' value='Botoșani' />
+          <alias key='&quot;BV&quot;' value='Brașov' />
+          <alias key='&quot;CJ&quot;' value='Cluj' />
+          <alias key='&quot;CS&quot;' value='Caraș-Severin' />
+          <alias key='&quot;CT&quot;' value='Constanța' />
+          <alias key='&quot;CV&quot;' value='Covasna' />
+          <alias key='&quot;DJ&quot;' value='Dolj' />
+          <alias key='&quot;GJ&quot;' value='Gorj' />
+          <alias key='&quot;GL&quot;' value='Galați' />
+          <alias key='&quot;GR&quot;' value='Giurgiu' />
+          <alias key='&quot;HD&quot;' value='Hunedoara' />
+          <alias key='&quot;HR&quot;' value='Harghita' />
+          <alias key='&quot;IF&quot;' value='Ilfov' />
+          <alias key='&quot;IL&quot;' value='Ialomița' />
+          <alias key='&quot;IS&quot;' value='Iași' />
+          <alias key='&quot;MH&quot;' value='Mehedinți' />
+          <alias key='&quot;MM&quot;' value='Maramureș' />
+          <alias key='&quot;MS&quot;' value='Mureș' />
+          <alias key='&quot;NT&quot;' value='Neamț' />
+          <alias key='&quot;SB&quot;' value='Sibiu' />
+          <alias key='&quot;SJ&quot;' value='Sălaj' />
+          <alias key='&quot;SM&quot;' value='Satu-Mare' />
+          <alias key='&quot;SV&quot;' value='Suceava' />
+          <alias key='&quot;TL&quot;' value='Tulcea' />
+          <alias key='&quot;TM&quot;' value='Timiș' />
+          <alias key='&quot;TR&quot;' value='Teleormna' />
+          <alias key='&quot;VL&quot;' value='Vâlcea' />
+          <alias key='&quot;VN&quot;' value='Vrancea' />
+          <alias key='&quot;VS&quot;' value='Vaslui' />
+        </aliases>
+      </column>
+      <column-instance column='[ML]' derivation='Sum' name='[sum:ML:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[positive]' derivation='Sum' name='[sum:positive:qk]' pivot='key' type='quantitative' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/andrei/PycharmProjects/covid-19-rt-romania/tableau/data_extract.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/21/2020 10:54:13 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='ro_rt_latest+' increment-value='%null%' refresh-type='create' rows-inserted='647' timestamp-start='2020-04-21 10:54:13.062' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>state</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>36</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ML</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[ML]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ML</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>246</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Low_90</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Low_90]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Low_90</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>112</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High_90</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High_90]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>High_90</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>299</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Low_50</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Low_50]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Low_50</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>193</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High_50</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High_50]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>High_50</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ro_rt_latest.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>275</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>positive</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[positive]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>positive</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ro_data_latest.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>278</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.340641' measure-ordering='alphabetic' measure-percentage='0.659359' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]&quot;</bucket>
+            </map>
+            <map to='#d3d3d3'>
+              <bucket>&quot;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='județe'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]&gt;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='12'>Evoluția cazurilor de COVID-19 și a Ro</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run>În orice epidemie, </run>
+            <run bold='true'>Ro</run>
+            <run> măsoară </run>
+            <run bold='true'>rata de reproducere a cazurilor de îmbolnăvire</run>
+            <run>. Practic, reprezintă numărul persoanelor noi infectate, de fiecare persoană deja pozitivă în parte, la un anumit moment în timp. Acest R evoluează în timp în funcție de restricțiile impuse sau de lipsa lor, distanțarea socială și altele. Dacă R este mai mic decât 1, epidemia încetinește pentru că o singură persoană pozitivă nu mai reușeste să infecteze o altă persoană. Dacă Rt este mai mare de 1, epidemia se extinde.&#10;</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ro_rt_latest+' name='federated.08q9rk604ps3g312563o61xyqrqi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08q9rk604ps3g312563o61xyqrqi'>
+            <column datatype='real' name='[ML]' role='measure' type='quantitative' />
+            <column-instance column='[state]' derivation='Attribute' name='[attr:state:nk]' pivot='key' type='nominal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[date]' derivation='Max' name='[max:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+            <column caption='Positive' datatype='integer' name='[positive]' role='measure' type='quantitative' />
+            <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+              <aliases>
+                <alias key='&quot;AB&quot;' value='Alba' />
+                <alias key='&quot;AG&quot;' value='Argeș' />
+                <alias key='&quot;AR&quot;' value='Arad' />
+                <alias key='&quot;B&quot;' value='București' />
+                <alias key='&quot;BC&quot;' value='Bacău' />
+                <alias key='&quot;BH&quot;' value='Bihor' />
+                <alias key='&quot;BN&quot;' value='Bistrița-Năsăud' />
+                <alias key='&quot;BT&quot;' value='Botoșani' />
+                <alias key='&quot;BV&quot;' value='Brașov' />
+                <alias key='&quot;CJ&quot;' value='Cluj' />
+                <alias key='&quot;CS&quot;' value='Caraș-Severin' />
+                <alias key='&quot;CT&quot;' value='Constanța' />
+                <alias key='&quot;CV&quot;' value='Covasna' />
+                <alias key='&quot;DJ&quot;' value='Dolj' />
+                <alias key='&quot;GJ&quot;' value='Gorj' />
+                <alias key='&quot;GL&quot;' value='Galați' />
+                <alias key='&quot;GR&quot;' value='Giurgiu' />
+                <alias key='&quot;HD&quot;' value='Hunedoara' />
+                <alias key='&quot;HR&quot;' value='Harghita' />
+                <alias key='&quot;IF&quot;' value='Ilfov' />
+                <alias key='&quot;IL&quot;' value='Ialomița' />
+                <alias key='&quot;IS&quot;' value='Iași' />
+                <alias key='&quot;MH&quot;' value='Mehedinți' />
+                <alias key='&quot;MM&quot;' value='Maramureș' />
+                <alias key='&quot;MS&quot;' value='Mureș' />
+                <alias key='&quot;NT&quot;' value='Neamț' />
+                <alias key='&quot;SB&quot;' value='Sibiu' />
+                <alias key='&quot;SJ&quot;' value='Sălaj' />
+                <alias key='&quot;SM&quot;' value='Satu-Mare' />
+                <alias key='&quot;SV&quot;' value='Suceava' />
+                <alias key='&quot;TL&quot;' value='Tulcea' />
+                <alias key='&quot;TM&quot;' value='Timiș' />
+                <alias key='&quot;TR&quot;' value='Teleormna' />
+                <alias key='&quot;VL&quot;' value='Vâlcea' />
+                <alias key='&quot;VN&quot;' value='Vrancea' />
+                <alias key='&quot;VS&quot;' value='Vaslui' />
+              </aliases>
+            </column>
+            <column-instance column='[ML]' derivation='Sum' name='[sum:ML:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[positive]' derivation='Sum' name='[sum:positive:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Day-Trunc' name='[tdy:date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]'>
+            <groupfilter function='member' level='[none:state:nk]' member='&quot;B&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[federated.08q9rk604ps3g312563o61xyqrqi].[tdy:date:qk]' scope='cols' value='' />
+            <format attr='stroke-size' value='0' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' value='n#,##0.00;-#,##0.00' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' min='0.0' palette='red_green_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='text-align' id='refline0' value='left' />
+            <format attr='background-color' id='refline0' value='#ffffff' />
+            <format attr='stroke-size' id='refline0' value='1' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dotted' />
+            <format attr='stroke-color' id='refline0' value='#ff5000ce' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='line-visibility' id='refline1' value='on' />
+            <format attr='line-pattern-only' id='refline1' value='solid' />
+            <format attr='stroke-color' id='refline1' value='#b4b4b44b' />
+            <format attr='stroke-size' id='refline1' value='2' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]' value='Județ'>
+              <formatted-text>
+                <run>Județ</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <tooltip column='[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='R = 1' label-type='custom' scope='per-table' value='1.0' value-column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' z-order='1' />
+            <reference-line axis-column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='none' scope='per-table' value='0' value-column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' z-order='2' />
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]&gt;</run>
+                <run>&#10;&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[tdy:date:qk]&gt;&#10;&#10;</run>
+                <run fontcolor='#787878'>Cazuri:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Ro:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='range' />
+                <format attr='mark-transparency' value='78' />
+                <format attr='mark-color' value='#b4b4b4' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' />
+              <tooltip column='[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]' />
+              <text column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' />
+            </encodings>
+            <label-data column='[federated.08q9rk604ps3g312563o61xyqrqi].[max:date:qk]' />
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]&gt;</run>
+                <run>&#10;&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[tdy:date:qk]&gt;&#10;&#10;</run>
+                <run fontcolor='#787878'>Cazuri:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Ro:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]</run>
+                <run>&gt; cazuri</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='left' />
+                <format attr='vertical-align' value='top' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-range-min' value='false' />
+                <format attr='mark-labels-mode' value='most-recent' />
+                <format attr='mark-color' value='#b4b4b4' />
+                <format attr='has-stroke' value='true' />
+                <format attr='mark-transparency' value='52' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' />
+              <tooltip column='[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]' />
+              <text column='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[attr:state:nk]&gt;</run>
+                <run>&#10;&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[tdy:date:qk]&gt;&#10;&#10;</run>
+                <run fontcolor='#787878'>Cazuri:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Ro:&#9;</run>
+                <run bold='true'>&lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>R</run>
+                <run fontsize='6'> o</run>
+                <run> = &lt;[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-range-max' value='false' />
+                <format attr='mark-labels-mode' value='line-ends' />
+                <format attr='mark-labels-line-first' value='false' />
+                <format attr='mark-color' value='#b4b4b4' />
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk] + [federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk])</rows>
+        <cols>[federated.08q9rk604ps3g312563o61xyqrqi].[tdy:date:qk]</cols>
+      </table>
+      <simple-id uuid='{5A262CE2-1E56-40DD-A584-9BC72AE9E38B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='România'>
+      <style />
+      <size maxheight='600' maxwidth='800' minheight='600' minwidth='800' preset-index='3' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='ro_rt_latest+' name='federated.08q9rk604ps3g312563o61xyqrqi' />
+      </datasources>
+      <datasource-dependencies datasource='federated.08q9rk604ps3g312563o61xyqrqi'>
+        <column-instance column='[state]' derivation='None' name='[none:state:nk]' pivot='key' type='nominal' />
+        <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+          <aliases>
+            <alias key='&quot;AB&quot;' value='Alba' />
+            <alias key='&quot;AG&quot;' value='Argeș' />
+            <alias key='&quot;AR&quot;' value='Arad' />
+            <alias key='&quot;B&quot;' value='București' />
+            <alias key='&quot;BC&quot;' value='Bacău' />
+            <alias key='&quot;BH&quot;' value='Bihor' />
+            <alias key='&quot;BN&quot;' value='Bistrița-Năsăud' />
+            <alias key='&quot;BT&quot;' value='Botoșani' />
+            <alias key='&quot;BV&quot;' value='Brașov' />
+            <alias key='&quot;CJ&quot;' value='Cluj' />
+            <alias key='&quot;CS&quot;' value='Caraș-Severin' />
+            <alias key='&quot;CT&quot;' value='Constanța' />
+            <alias key='&quot;CV&quot;' value='Covasna' />
+            <alias key='&quot;DJ&quot;' value='Dolj' />
+            <alias key='&quot;GJ&quot;' value='Gorj' />
+            <alias key='&quot;GL&quot;' value='Galați' />
+            <alias key='&quot;GR&quot;' value='Giurgiu' />
+            <alias key='&quot;HD&quot;' value='Hunedoara' />
+            <alias key='&quot;HR&quot;' value='Harghita' />
+            <alias key='&quot;IF&quot;' value='Ilfov' />
+            <alias key='&quot;IL&quot;' value='Ialomița' />
+            <alias key='&quot;IS&quot;' value='Iași' />
+            <alias key='&quot;MH&quot;' value='Mehedinți' />
+            <alias key='&quot;MM&quot;' value='Maramureș' />
+            <alias key='&quot;MS&quot;' value='Mureș' />
+            <alias key='&quot;NT&quot;' value='Neamț' />
+            <alias key='&quot;SB&quot;' value='Sibiu' />
+            <alias key='&quot;SJ&quot;' value='Sălaj' />
+            <alias key='&quot;SM&quot;' value='Satu-Mare' />
+            <alias key='&quot;SV&quot;' value='Suceava' />
+            <alias key='&quot;TL&quot;' value='Tulcea' />
+            <alias key='&quot;TM&quot;' value='Timiș' />
+            <alias key='&quot;TR&quot;' value='Teleormna' />
+            <alias key='&quot;VL&quot;' value='Vâlcea' />
+            <alias key='&quot;VN&quot;' value='Vrancea' />
+            <alias key='&quot;VS&quot;' value='Vaslui' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='80000' id='7' param='horz' type='layout-flow' w='98000' x='1000' y='1333'>
+            <zone h='80000' id='5' type='layout-basic' w='78000' x='1000' y='1333'>
+              <zone h='80000' id='3' name='județe' w='78000' x='1000' y='1333'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='80000' id='6' is-fixed='true' param='vert' type='layout-flow' w='20000' x='79000' y='1333'>
+              <zone fixed-size='60' h='11333' id='9' is-fixed='true' type='empty' w='20000' x='79000' y='1333'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8666' id='8' mode='dropdown' name='județe' param='[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]' show-all='false' type='filter' w='20000' x='79000' y='12666'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='17334' id='12' type='text' w='98000' x='1000' y='81333'>
+            <formatted-text>
+              <run>În orice epidemie, </run>
+              <run bold='true'>Ro</run>
+              <run> măsoară </run>
+              <run bold='true'>rata de reproducere a cazurilor de îmbolnăvire</run>
+              <run>. Practic, reprezintă numărul persoanelor noi infectate, de fiecare persoană deja pozitivă în parte, la un anumit moment în timp. Acest R evoluează în timp în funcție de restricțiile impuse sau de lipsa lor, distanțarea socială și altele. Dacă R este mai mic decât 1, epidemia încetinește pentru că o singură persoană pozitivă nu mai reușeste să infecteze o altă persoană. Dacă Rt este mai mare de 1, epidemia se extinde.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97334' id='22' param='vert' type='layout-flow' w='98000' x='1000' y='1333'>
+                <zone h='8666' id='8' mode='dropdown' name='județe' param='[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]' show-all='false' type='filter' w='20000' x='79000' y='12666'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='80000' id='3' is-fixed='true' name='județe' w='78000' x='1000' y='1333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='17334' id='12' type='text' w='98000' x='1000' y='81333'>
+                  <formatted-text>
+                    <run>În orice epidemie, </run>
+                    <run bold='true'>Ro</run>
+                    <run> măsoară </run>
+                    <run bold='true'>rata de reproducere a cazurilor de îmbolnăvire</run>
+                    <run>. Practic, reprezintă numărul persoanelor noi infectate, de fiecare persoană deja pozitivă în parte, la un anumit moment în timp. Acest R evoluează în timp în funcție de restricțiile impuse sau de lipsa lor, distanțarea socială și altele. Dacă R este mai mic decât 1, epidemia încetinește pentru că o singură persoană pozitivă nu mai reușeste să infecteze o altă persoană. Dacă Rt este mai mare de 1, epidemia se extinde.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{84212CA4-4ABD-4FE6-B0CE-BA343FC7F96C}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='România'>
+      <viewpoints>
+        <viewpoint name='județe'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{53AF466B-424F-4E81-A74D-0B29A98ADB3D}' />
+    </window>
+    <window class='worksheet' hidden='true' name='județe'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]' show-all='false' type='filter' />
+            <card pane-specification-id='1' param='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]' type='color' />
+            <card pane-specification-id='2' param='[federated.08q9rk604ps3g312563o61xyqrqi].[sum:ML:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.08q9rk604ps3g312563o61xyqrqi].[none:state:nk]</field>
+            <field>[federated.08q9rk604ps3g312563o61xyqrqi].[sum:positive:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{2C1E4693-F323-44D9-9424-2C460A33F37F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='România' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

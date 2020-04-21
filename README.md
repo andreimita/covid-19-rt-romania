@@ -13,3 +13,6 @@ Raw data for US states to be used with the original notebook ```Realtime R0 - Or
 
 **img/ro_rt_latest.png**  
 Resulted graphs for each county in Romania (except the ones that can't be processed due to lack or poor data).
+
+**tableau/book.twb**
+Tableau visualization with date from ```data/ro_data_latest.csv``` and ```data/ro_rt_latest.csv``` also available on [Tableau Public](https://public.tableau.com/views/book_15874671877920/Romnia?:display_count=y&publish=yes&:origin=viz_share_link). 
