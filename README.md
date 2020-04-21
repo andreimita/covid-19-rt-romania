@@ -5,6 +5,7 @@ Clone from Kevin Systrom's notebook published on April 17 and adapted to work wi
 https://github.com/k-sys/covid-19
 
 **data/ro_data_latest.csv**
+
 Data for Romania from [https://datelazi.ro](https://datelazi.ro) extracted and proccessed to be used with ```Realtime R0 - Romania.ipynb```
 
 **img/ro_rt_latest.png**
