@@ -12,4 +12,4 @@ Computed Rt data for Romania based on date from ```data/ro_data_latest.csv```
 Raw data for US states to be used with the original notebook ```Realtime R0 - Original.ipynb```
 
 **img/ro_rt_latest.png**  
-Resulted graphs for each county in Romania (except the ones that can't be processed due to lack or poor datat)
+Resulted graphs for each county in Romania (except the ones that can't be processed due to lack or poor data).
