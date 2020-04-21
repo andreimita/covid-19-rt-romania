@@ -44,4 +44,7 @@ Resulted graphs for each county in Romania (except the ones that can't be proces
 Tableau visualization also available on [Tableau Public](https://public.tableau.com/views/book_15874671877920/Romnia?:display_count=y&publish=yes&:origin=viz_share_link).  
 
 **tableau/data_extract.hyper**  
-Data extract used by the Tableau visualization.
+Data extract used by the Tableau visualization for counties in Romania.
+
+**tableau/global_extract.hyper**  
+Data extract used by the Tableau visualization for all countries.
