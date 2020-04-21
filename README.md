@@ -19,7 +19,7 @@ Country data obtained from: https://github.com/CSSEGISandData/COVID-19/tree/mast
 **data/global1_raw_data_latest.csv**  
 Raw global data used by ```Realtime R0 - Global v1.ipynb``` when url does not work.
 
-**data/global2_raw_data_latest.csv**
+**data/global2_raw_data_latest.csv**  
 Raw global data used by ```Realtime R0 - Global v2.ipynb``` when url does not work.
 
 **data/global_rt_latest.csv**  
