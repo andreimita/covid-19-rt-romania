@@ -6,7 +6,7 @@ from scipy import stats as sps
 
 FILTERED_REGIONS = []
 
-FILTERED_REGION_CODES = ['-', 'BR', 'BZ', 'OT', 'CL', 'DB', 'MH', 'MM', 'SJ']
+FILTERED_REGION_CODES = ['-', 'BR', 'BZ', 'CL', 'MH', 'MM', 'PH', 'SJ', 'VN']
 
 
 def highest_density_interval(pmf, p=.9):
